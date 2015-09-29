@@ -4,7 +4,7 @@
 #
 Name     : perl-HTML-Parser
 Version  : 3.71
-Release  : 7
+Release  : 8
 URL      : http://search.cpan.org/CPAN/authors/id/G/GA/GAAS/HTML-Parser-3.71.tar.gz
 Source0  : http://search.cpan.org/CPAN/authors/id/G/GA/GAAS/HTML-Parser-3.71.tar.gz
 Summary  : 'HTML parser class'
