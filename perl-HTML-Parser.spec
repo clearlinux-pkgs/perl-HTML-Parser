@@ -4,7 +4,7 @@
 #
 Name     : perl-HTML-Parser
 Version  : 3.72
-Release  : 11
+Release  : 12
 URL      : http://search.cpan.org/CPAN/authors/id/G/GA/GAAS/HTML-Parser-3.72.tar.gz
 Source0  : http://search.cpan.org/CPAN/authors/id/G/GA/GAAS/HTML-Parser-3.72.tar.gz
 Summary  : 'HTML parser class'
@@ -70,13 +70,13 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files
 %defattr(-,root,root,-)
-/usr/lib/perl5/site_perl/5.22.0/x86_64-linux/HTML/Entities.pm
-/usr/lib/perl5/site_perl/5.22.0/x86_64-linux/HTML/Filter.pm
-/usr/lib/perl5/site_perl/5.22.0/x86_64-linux/HTML/HeadParser.pm
-/usr/lib/perl5/site_perl/5.22.0/x86_64-linux/HTML/LinkExtor.pm
-/usr/lib/perl5/site_perl/5.22.0/x86_64-linux/HTML/Parser.pm
-/usr/lib/perl5/site_perl/5.22.0/x86_64-linux/HTML/PullParser.pm
-/usr/lib/perl5/site_perl/5.22.0/x86_64-linux/HTML/TokeParser.pm
+/usr/lib/perl5/site_perl/5.24.0/x86_64-linux/HTML/Entities.pm
+/usr/lib/perl5/site_perl/5.24.0/x86_64-linux/HTML/Filter.pm
+/usr/lib/perl5/site_perl/5.24.0/x86_64-linux/HTML/HeadParser.pm
+/usr/lib/perl5/site_perl/5.24.0/x86_64-linux/HTML/LinkExtor.pm
+/usr/lib/perl5/site_perl/5.24.0/x86_64-linux/HTML/Parser.pm
+/usr/lib/perl5/site_perl/5.24.0/x86_64-linux/HTML/PullParser.pm
+/usr/lib/perl5/site_perl/5.24.0/x86_64-linux/HTML/TokeParser.pm
 
 %files doc
 %defattr(-,root,root,-)
@@ -84,4 +84,4 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files lib
 %defattr(-,root,root,-)
-/usr/lib/perl5/site_perl/5.22.0/x86_64-linux/auto/HTML/Parser/Parser.so
+/usr/lib/perl5/site_perl/5.24.0/x86_64-linux/auto/HTML/Parser/Parser.so
