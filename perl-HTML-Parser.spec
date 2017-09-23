@@ -4,7 +4,7 @@
 #
 Name     : perl-HTML-Parser
 Version  : 3.72
-Release  : 15
+Release  : 16
 URL      : http://search.cpan.org/CPAN/authors/id/G/GA/GAAS/HTML-Parser-3.72.tar.gz
 Source0  : http://search.cpan.org/CPAN/authors/id/G/GA/GAAS/HTML-Parser-3.72.tar.gz
 Summary  : 'HTML parser class'
@@ -75,13 +75,13 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files
 %defattr(-,root,root,-)
-/usr/lib/perl5/site_perl/5.26.0/x86_64-linux-thread-multi/HTML/Entities.pm
-/usr/lib/perl5/site_perl/5.26.0/x86_64-linux-thread-multi/HTML/Filter.pm
-/usr/lib/perl5/site_perl/5.26.0/x86_64-linux-thread-multi/HTML/HeadParser.pm
-/usr/lib/perl5/site_perl/5.26.0/x86_64-linux-thread-multi/HTML/LinkExtor.pm
-/usr/lib/perl5/site_perl/5.26.0/x86_64-linux-thread-multi/HTML/Parser.pm
-/usr/lib/perl5/site_perl/5.26.0/x86_64-linux-thread-multi/HTML/PullParser.pm
-/usr/lib/perl5/site_perl/5.26.0/x86_64-linux-thread-multi/HTML/TokeParser.pm
+/usr/lib/perl5/site_perl/5.26.1/x86_64-linux-thread-multi/HTML/Entities.pm
+/usr/lib/perl5/site_perl/5.26.1/x86_64-linux-thread-multi/HTML/Filter.pm
+/usr/lib/perl5/site_perl/5.26.1/x86_64-linux-thread-multi/HTML/HeadParser.pm
+/usr/lib/perl5/site_perl/5.26.1/x86_64-linux-thread-multi/HTML/LinkExtor.pm
+/usr/lib/perl5/site_perl/5.26.1/x86_64-linux-thread-multi/HTML/Parser.pm
+/usr/lib/perl5/site_perl/5.26.1/x86_64-linux-thread-multi/HTML/PullParser.pm
+/usr/lib/perl5/site_perl/5.26.1/x86_64-linux-thread-multi/HTML/TokeParser.pm
 
 %files doc
 %defattr(-,root,root,-)
@@ -89,4 +89,4 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files lib
 %defattr(-,root,root,-)
-/usr/lib/perl5/site_perl/5.26.0/x86_64-linux-thread-multi/auto/HTML/Parser/Parser.so
+/usr/lib/perl5/site_perl/5.26.1/x86_64-linux-thread-multi/auto/HTML/Parser/Parser.so
