@@ -4,14 +4,14 @@
 #
 Name     : perl-HTML-Parser
 Version  : 3.72
-Release  : 20
+Release  : 21
 URL      : https://cpan.metacpan.org/authors/id/G/GA/GAAS/HTML-Parser-3.72.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/G/GA/GAAS/HTML-Parser-3.72.tar.gz
 Summary  : 'HTML parser class'
 Group    : Development/Tools
 License  : Artistic-1.0-Perl
-Requires: perl-HTML-Parser-lib
-Requires: perl-HTML-Parser-man
+Requires: perl-HTML-Parser-lib = %{version}-%{release}
+BuildRequires : buildreq-cpan
 BuildRequires : perl(HTML::Tagset)
 BuildRequires : perl(HTTP::Headers)
 BuildRequires : perl(URI)
@@ -22,20 +22,22 @@ The HTML-Parser distribution is is a collection of modules that parse
 and extract information from HTML documents.  The modules present in
 this collection are:
 
+%package dev
+Summary: dev components for the perl-HTML-Parser package.
+Group: Development
+Requires: perl-HTML-Parser-lib = %{version}-%{release}
+Provides: perl-HTML-Parser-devel = %{version}-%{release}
+
+%description dev
+dev components for the perl-HTML-Parser package.
+
+
 %package lib
 Summary: lib components for the perl-HTML-Parser package.
 Group: Libraries
 
 %description lib
 lib components for the perl-HTML-Parser package.
-
-
-%package man
-Summary: man components for the perl-HTML-Parser package.
-Group: Default
-
-%description man
-man components for the perl-HTML-Parser package.
 
 
 %prep
@@ -64,9 +66,9 @@ make TEST_VERBOSE=1 test
 %install
 rm -rf %{buildroot}
 if test -f Makefile.PL; then
-make pure_install PERL_INSTALL_ROOT=%{buildroot}
+make pure_install PERL_INSTALL_ROOT=%{buildroot} INSTALLDIRS=vendor
 else
-./Build install --installdirs=site --destdir=%{buildroot}
+./Build install --installdirs=vendor --destdir=%{buildroot}
 fi
 find %{buildroot} -type f -name .packlist -exec rm -f {} ';'
 find %{buildroot} -depth -type d -exec rmdir {} 2>/dev/null ';'
@@ -75,19 +77,15 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files
 %defattr(-,root,root,-)
-/usr/lib/perl5/site_perl/5.26.1/x86_64-linux-thread-multi/HTML/Entities.pm
-/usr/lib/perl5/site_perl/5.26.1/x86_64-linux-thread-multi/HTML/Filter.pm
-/usr/lib/perl5/site_perl/5.26.1/x86_64-linux-thread-multi/HTML/HeadParser.pm
-/usr/lib/perl5/site_perl/5.26.1/x86_64-linux-thread-multi/HTML/LinkExtor.pm
-/usr/lib/perl5/site_perl/5.26.1/x86_64-linux-thread-multi/HTML/Parser.pm
-/usr/lib/perl5/site_perl/5.26.1/x86_64-linux-thread-multi/HTML/PullParser.pm
-/usr/lib/perl5/site_perl/5.26.1/x86_64-linux-thread-multi/HTML/TokeParser.pm
+/usr/lib/perl5/vendor_perl/5.26.1/x86_64-linux-thread-multi/HTML/Entities.pm
+/usr/lib/perl5/vendor_perl/5.26.1/x86_64-linux-thread-multi/HTML/Filter.pm
+/usr/lib/perl5/vendor_perl/5.26.1/x86_64-linux-thread-multi/HTML/HeadParser.pm
+/usr/lib/perl5/vendor_perl/5.26.1/x86_64-linux-thread-multi/HTML/LinkExtor.pm
+/usr/lib/perl5/vendor_perl/5.26.1/x86_64-linux-thread-multi/HTML/Parser.pm
+/usr/lib/perl5/vendor_perl/5.26.1/x86_64-linux-thread-multi/HTML/PullParser.pm
+/usr/lib/perl5/vendor_perl/5.26.1/x86_64-linux-thread-multi/HTML/TokeParser.pm
 
-%files lib
-%defattr(-,root,root,-)
-/usr/lib/perl5/site_perl/5.26.1/x86_64-linux-thread-multi/auto/HTML/Parser/Parser.so
-
-%files man
+%files dev
 %defattr(-,root,root,-)
 /usr/share/man/man3/HTML::Entities.3
 /usr/share/man/man3/HTML::Filter.3
@@ -96,3 +94,7 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 /usr/share/man/man3/HTML::Parser.3
 /usr/share/man/man3/HTML::PullParser.3
 /usr/share/man/man3/HTML::TokeParser.3
+
+%files lib
+%defattr(-,root,root,-)
+/usr/lib/perl5/vendor_perl/5.26.1/x86_64-linux-thread-multi/auto/HTML/Parser/Parser.so
