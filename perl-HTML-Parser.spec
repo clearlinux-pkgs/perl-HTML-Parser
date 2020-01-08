@@ -4,13 +4,13 @@
 #
 Name     : perl-HTML-Parser
 Version  : 3.72
-Release  : 31
+Release  : 32
 URL      : https://cpan.metacpan.org/authors/id/G/GA/GAAS/HTML-Parser-3.72.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/G/GA/GAAS/HTML-Parser-3.72.tar.gz
 Summary  : 'HTML parser class'
 Group    : Development/Tools
 License  : Artistic-1.0-Perl
-Requires: perl-HTML-Parser-lib = %{version}-%{release}
+Requires: perl-HTML-Parser-perl = %{version}-%{release}
 BuildRequires : buildreq-cpan
 BuildRequires : perl(HTML::Tagset)
 BuildRequires : perl(HTTP::Headers)
@@ -25,29 +25,31 @@ this collection are:
 %package dev
 Summary: dev components for the perl-HTML-Parser package.
 Group: Development
-Requires: perl-HTML-Parser-lib = %{version}-%{release}
 Provides: perl-HTML-Parser-devel = %{version}-%{release}
+Requires: perl-HTML-Parser = %{version}-%{release}
 
 %description dev
 dev components for the perl-HTML-Parser package.
 
 
-%package lib
-Summary: lib components for the perl-HTML-Parser package.
-Group: Libraries
+%package perl
+Summary: perl components for the perl-HTML-Parser package.
+Group: Default
+Requires: perl-HTML-Parser = %{version}-%{release}
 
-%description lib
-lib components for the perl-HTML-Parser package.
+%description perl
+perl components for the perl-HTML-Parser package.
 
 
 %prep
 %setup -q -n HTML-Parser-3.72
+cd %{_builddir}/HTML-Parser-3.72
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
-export LANG=C
+export LANG=C.UTF-8
 if test -f Makefile.PL; then
 %{__perl} Makefile.PL
 make  %{?_smp_mflags}
@@ -57,7 +59,7 @@ else
 fi
 
 %check
-export LANG=C
+export LANG=C.UTF-8
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
@@ -77,13 +79,6 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.28.2/x86_64-linux-thread-multi/HTML/Entities.pm
-/usr/lib/perl5/vendor_perl/5.28.2/x86_64-linux-thread-multi/HTML/Filter.pm
-/usr/lib/perl5/vendor_perl/5.28.2/x86_64-linux-thread-multi/HTML/HeadParser.pm
-/usr/lib/perl5/vendor_perl/5.28.2/x86_64-linux-thread-multi/HTML/LinkExtor.pm
-/usr/lib/perl5/vendor_perl/5.28.2/x86_64-linux-thread-multi/HTML/Parser.pm
-/usr/lib/perl5/vendor_perl/5.28.2/x86_64-linux-thread-multi/HTML/PullParser.pm
-/usr/lib/perl5/vendor_perl/5.28.2/x86_64-linux-thread-multi/HTML/TokeParser.pm
 
 %files dev
 %defattr(-,root,root,-)
@@ -95,6 +90,13 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 /usr/share/man/man3/HTML::PullParser.3
 /usr/share/man/man3/HTML::TokeParser.3
 
-%files lib
+%files perl
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.28.2/x86_64-linux-thread-multi/auto/HTML/Parser/Parser.so
+/usr/lib/perl5/vendor_perl/5.30.1/x86_64-linux-thread-multi/HTML/Entities.pm
+/usr/lib/perl5/vendor_perl/5.30.1/x86_64-linux-thread-multi/HTML/Filter.pm
+/usr/lib/perl5/vendor_perl/5.30.1/x86_64-linux-thread-multi/HTML/HeadParser.pm
+/usr/lib/perl5/vendor_perl/5.30.1/x86_64-linux-thread-multi/HTML/LinkExtor.pm
+/usr/lib/perl5/vendor_perl/5.30.1/x86_64-linux-thread-multi/HTML/Parser.pm
+/usr/lib/perl5/vendor_perl/5.30.1/x86_64-linux-thread-multi/HTML/PullParser.pm
+/usr/lib/perl5/vendor_perl/5.30.1/x86_64-linux-thread-multi/HTML/TokeParser.pm
+/usr/lib/perl5/vendor_perl/5.30.1/x86_64-linux-thread-multi/auto/HTML/Parser/Parser.so
