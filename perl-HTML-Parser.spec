@@ -110,11 +110,11 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files perl
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.32.1/x86_64-linux-thread-multi/HTML/Entities.pm
-/usr/lib/perl5/vendor_perl/5.32.1/x86_64-linux-thread-multi/HTML/Filter.pm
-/usr/lib/perl5/vendor_perl/5.32.1/x86_64-linux-thread-multi/HTML/HeadParser.pm
-/usr/lib/perl5/vendor_perl/5.32.1/x86_64-linux-thread-multi/HTML/LinkExtor.pm
-/usr/lib/perl5/vendor_perl/5.32.1/x86_64-linux-thread-multi/HTML/Parser.pm
-/usr/lib/perl5/vendor_perl/5.32.1/x86_64-linux-thread-multi/HTML/PullParser.pm
-/usr/lib/perl5/vendor_perl/5.32.1/x86_64-linux-thread-multi/HTML/TokeParser.pm
-/usr/lib/perl5/vendor_perl/5.32.1/x86_64-linux-thread-multi/auto/HTML/Parser/Parser.so
+/usr/lib/perl5/vendor_perl/5.34.0/x86_64-linux-thread-multi/HTML/Entities.pm
+/usr/lib/perl5/vendor_perl/5.34.0/x86_64-linux-thread-multi/HTML/Filter.pm
+/usr/lib/perl5/vendor_perl/5.34.0/x86_64-linux-thread-multi/HTML/HeadParser.pm
+/usr/lib/perl5/vendor_perl/5.34.0/x86_64-linux-thread-multi/HTML/LinkExtor.pm
+/usr/lib/perl5/vendor_perl/5.34.0/x86_64-linux-thread-multi/HTML/Parser.pm
+/usr/lib/perl5/vendor_perl/5.34.0/x86_64-linux-thread-multi/HTML/PullParser.pm
+/usr/lib/perl5/vendor_perl/5.34.0/x86_64-linux-thread-multi/HTML/TokeParser.pm
+/usr/lib/perl5/vendor_perl/5.34.0/x86_64-linux-thread-multi/auto/HTML/Parser/Parser.so
