@@ -4,7 +4,7 @@
 #
 Name     : perl-HTML-Parser
 Version  : 3.76
-Release  : 38
+Release  : 39
 URL      : https://cpan.metacpan.org/authors/id/O/OA/OALDERS/HTML-Parser-3.76.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/O/OA/OALDERS/HTML-Parser-3.76.tar.gz
 Summary  : 'HTML parser class'
