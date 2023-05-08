@@ -4,7 +4,7 @@
 #
 Name     : perl-HTML-Parser
 Version  : 3.81
-Release  : 50
+Release  : 51
 URL      : https://cpan.metacpan.org/authors/id/O/OA/OALDERS/HTML-Parser-3.81.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/O/OA/OALDERS/HTML-Parser-3.81.tar.gz
 Summary  : 'HTML parser class'
